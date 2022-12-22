@@ -1,0 +1,39 @@
+{
+  "name": "weatherapp",
+  "version": "1.0.0",
+  "description": "Minimal Weather Application",
+  "private": "true",
+  "scripts": {
+    "dev": "nodemon --watch 'src/*' --ext '*' --exec 'npm run tw-build && npm run wp-dev'",
+    "prod": "npm run tw-build && npm run tw-minify && npm run wp-prod",
+    "wp-dev": "webpack --mode development",
+    "wp-prod": "webpack --mode production",
+    "tw-build": "npx tailwindcss -i ./src/input.css -o ./src/output.css",
+    "tw-minify": "npx tailwindcss -o ./src/output.css --minify"
+  },
+  "keywords": [
+    "WeatherApp",
+    "Weather",
+    "Forecast"
+  ],
+  "browserslist": "> 0.25%, not dead",
+  "author": "GeorgeKryptonian",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@babel/preset-env": "^7.19.4",
+    "babel-loader": "^8.2.5",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.7.1",
+    "html-loader": "^4.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "nodemon": "^2.0.20",
+    "style-loader": "^3.3.1",
+    "tailwindcss": "^3.1.8",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  },
+  "dependencies": {
+    "axios": "^0.27.2"
+  }
+}
