@@ -22,14 +22,14 @@
     </div>
     <div class="panel absolute bottom-0 w-full rounded-t-3xl bg-white shadow-[0px_-16px_40px_rgba(0,_0,_0,_0.2)] font-medium">
         <!-- • Add/remove "pt-2 px-2" classes to the .locationBlock -->
-        <div class="locationBlock flex justify-between items-center transition-[padding] duration-300">
+        <div class="locationBlock flex justify-between items-center transition-[padding] duration-300 pt-2 px-2">
             <!-- • Show/hide .currentDateAndTime -->
-            <span class="currentDateAndTime text-xs xs:text-sm font-normal text-[#999999] mx-5 transition-all duration-300">Sunday, 20 May 2022  |  4:30PM</span>
+<!--            <span class="currentDateAndTime text-xs xs:text-sm font-normal text-[#999999] mx-5 transition-all duration-300">Sunday, 20 May 2022  |  4:30PM</span>-->
             <!--
                 • If .locationInput's type is "button": "h-12 text-[#0DA0EA] bg-[#0D9FEA14] bg-[url(assets/images/icons/location_typeButton.svg)] rounded-tr-3xl rounded-bl-3xl cursor-pointer" classes and value isn't empty".
                 • If .locationInput's type is "text": "w-full h-10 text-black bg-[#F3F3F3] bg-[url(assets/images/icons/location_typeText.svg)] rounded-t-[18px] rounded-b-[9px]" classes and value is empty.
             -->
-            <input class="locationInput pl-4 pr-11 text-left text-sm xs:text-base bg-no-repeat bg-[length:11.2px] bg-[right_16px_center] placeholder-[#999999] transition-all duration-300 h-12 text-[#0DA0EA] bg-[#0D9FEA14] bg-[url(https://via.placeholder.com/28x40)] rounded-tr-3xl rounded-bl-3xl cursor-pointer" type="button" placeholder="Example: Toronto, CA" value="Toronto, Canada">
+            <input class="locationInput pl-4 pr-11 text-left text-sm xs:text-base bg-no-repeat bg-[length:11.2px] bg-[right_16px_center] placeholder-[#999999] transition-all duration-300 w-full h-10 text-black bg-[#F3F3F3] bg-[url(assets/images/icons/location_typeText.svg)] rounded-t-[18px] rounded-b-[9px]" type="text" placeholder="Example: Toronto, CA" value="">
         </div>
 
         <div class="panelGrid grid grid-cols-3 gap-y-10 justify-items-center items-center px-6 xs:px-11 mt-6 transition-all duration-300">
