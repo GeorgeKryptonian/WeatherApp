@@ -5,11 +5,11 @@
   "private": "true",
   "scripts": {
     "dev": "nodemon --watch 'src/*' --ext '*' --exec 'npm run tw-build && npm run wp-dev'",
-    "prod": "npm run tw-build && npm run tw-minify && npm run wp-prod",
+    "prod": "npm run tw-minify && npm run wp-prod",
     "wp-dev": "webpack --mode development",
     "wp-prod": "webpack --mode production",
     "tw-build": "npx tailwindcss -i ./src/input.css -o ./src/output.css",
-    "tw-minify": "npx tailwindcss -o ./src/output.css --minify"
+    "tw-minify": "npx tailwindcss -i ./src/input.css -o ./src/output.css --minify"
   },
   "keywords": [
     "WeatherApp",
@@ -23,7 +23,6 @@
     "@babel/core": "^7.19.3",
     "@babel/preset-env": "^7.19.4",
     "babel-loader": "^8.2.5",
-    "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
     "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.5.0",
