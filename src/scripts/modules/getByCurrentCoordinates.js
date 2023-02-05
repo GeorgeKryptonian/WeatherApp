@@ -1,8 +1,9 @@
-import {getNextFourDays} from "./getNextFourDays";
+import {getNextFourDays} from './getNextFourDays';
+import axios from 'axios';
 
 //? Makes API call to OpenWeatherMap with specified type (forecast or weather) and user's current coordinates, and returns either next four days' forecast or current weather data.
 export function getByCurrentCoordinates(type, latitude, longitude) {
-    return require('axios').get(`https://api.openweathermap.org/data/2.5/${type}`, {
+    return axios.get(`https://api.openweathermap.org/data/2.5/${type}`, {
         params: {
             lat: latitude,
             lon: longitude,

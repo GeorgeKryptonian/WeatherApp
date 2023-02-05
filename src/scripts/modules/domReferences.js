@@ -7,7 +7,8 @@ export const domReferences = {
             weatherValue: document.querySelector('.currentWeatherVal'),
             temp: document.querySelector('.currentTemp .tempVal'),
             tempMax: document.querySelector('.panelGrid .tempMax span'),
-            tempMin: document.querySelector('.panelGrid .tempMin span')
+            tempMin: document.querySelector('.panelGrid .tempMin span'),
+            favicon: document.querySelector('link[rel~=icon]')
         },
         //? Contains references to detailed weather elements.
         details: {

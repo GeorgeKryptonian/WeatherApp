@@ -17,19 +17,15 @@
 <body>
 
 <div class="weatherApp relative font-['Barlow',_sans-serif] max-w-[480px] h-[796px] xs:h-[826px] mx-auto">
-    <div class="timeOfDayGraphicBlock bg-gradient-to-b from-[#54B4F9_5.67%] to-[#FFFFFF_127%] transition-all duration-300">
+    <div class="timeOfDayGraphicBlock transition-all duration-300 bg-gradient-to-b from-[#54B4F9_5.67%] to-[#FFFFFF_127%]">
         <img class="object-cover h-[298px] mx-auto" src="https://via.placeholder.com/475x298" alt="currentTimeOfDayImage">
     </div>
     <div class="panel absolute bottom-0 w-full rounded-t-3xl bg-white shadow-[0px_-16px_40px_rgba(0,_0,_0,_0.2)] font-medium">
-        <!-- • Add/remove "pt-2 px-2" classes to the .locationBlock -->
         <div class="locationBlock flex justify-between items-center transition-[padding] duration-300 pt-2 px-2">
-            <!-- • Show/hide .currentDateAndTime -->
-            <span class="currentDateAndTime hidden text-xs xs:text-sm font-normal text-[#999999] mx-5 transition-all duration-300">Sunday, 20 May 2022  |  4:30PM</span>
-            <!--
-                • If .locationInput's type is "button": "h-12 text-[#0DA0EA] bg-[#0D9FEA14] bg-[url(assets/images/icons/location_typeButton.svg)] rounded-tr-3xl rounded-bl-3xl cursor-pointer" classes and value isn't empty".
-                • If .locationInput's type is "text": "w-full h-10 text-black bg-[#F3F3F3] bg-[url(assets/images/icons/location_typeText.svg)] rounded-t-[18px] rounded-b-[9px]" classes and value is empty.
-            -->
-            <input class="locationInput pl-4 pr-11 text-left text-sm xs:text-base bg-no-repeat bg-[length:11.2px] bg-[right_16px_center] placeholder-[#999999] transition-all duration-300 w-full h-10 text-black bg-[#F3F3F3] bg-[url(assets/images/icons/location_typeText.svg)] rounded-t-[18px] rounded-b-[9px]" type="text" placeholder="Example: Toronto, CA" value="">
+            <span class="currentDateAndTime hidden text-xs xs:text-sm font-normal text-[#999999] mx-5 transition-all duration-300">Sunday, 20 May 2022 | 04:30</span>
+            <form class="locationForm w-full">
+                <input class="locationInput animate-pulse focus-within:animate-none pl-4 pr-11 text-left text-sm xs:text-base bg-no-repeat bg-[length:11.2px] bg-[right_16px_center] placeholder-[#999999] transition-all duration-300 w-full h-10 text-black bg-[#F3F3F3] bg-[url(assets/images/icons/blackMarker.svg)] rounded-t-[18px] rounded-b-[9px]" type="text" placeholder="Example: Toronto, CA" value="">
+            </form>
         </div>
 
         <div class="panelGrid grid grid-cols-3 gap-y-10 justify-items-center items-center px-6 xs:px-11 mt-6 transition-all duration-300">
@@ -53,12 +49,12 @@
             </div>
             <div class="humidity flex flex-col items-center">
                 <img class="mb-3" src="assets/images/icons/weather/details/humidity.svg" alt="humidity">
-                <span class="humidityVal text-sm xs:text-base text-[#444444] tracking-tighter mb-1">49%</span>
+                <span class="humidityVal text-sm xs:text-base text-[#444444] tracking-tighter mb-1">49 %</span>
                 <span class="text-[6px] xs:text-[8px] text-[#999999] tracking-widest">Humidity</span>
             </div>
             <div class="pressure flex flex-col items-center">
                 <img class="mb-3" src="assets/images/icons/weather/details/pressure.svg" alt="pressure">
-                <span class="pressureVal text-sm xs:text-base text-[#444444] tracking-tighter mb-1">1,007mBar</span>
+                <span class="pressureVal text-sm xs:text-base text-[#444444] tracking-tighter mb-1">1007 mBar</span>
                 <span class="text-[6px] xs:text-[8px] text-[#999999] tracking-widest">Pressure</span>
             </div>
             <div class="wind flex flex-col items-center">
@@ -68,12 +64,12 @@
             </div>
             <div class="sunrise flex flex-col items-center">
                 <img class="mb-3" src="assets/images/icons/weather/details/sunrise.svg" alt="sunrise">
-                <span class="sunriseVal text-sm xs:text-base text-[#444444] tracking-tighter mb-1">6:03 AM</span>
+                <span class="sunriseVal text-sm xs:text-base text-[#444444] tracking-tighter mb-1">06:03</span>
                 <span class="text-[6px] xs:text-[8px] text-[#999999] tracking-widest">Sunrise</span>
             </div>
             <div class="sunset flex flex-col items-center">
                 <img class="mb-3" src="assets/images/icons/weather/details/sunset.svg" alt="sunset">
-                <span class="sunsetVal text-sm xs:text-base text-[#444444] tracking-tighter mb-1">7:05 PM</span>
+                <span class="sunsetVal text-sm xs:text-base text-[#444444] tracking-tighter mb-1">19:05</span>
                 <span class="text-[6px] xs:text-[8px] text-[#999999] tracking-widest">Sunset</span>
             </div>
             <div class="daytime flex flex-col items-center">
@@ -84,7 +80,7 @@
         </div>
 
         <div class="theNextFourDays flex space-x-5 px-5 overflow-x-auto pt-6 pb-10 transition-all duration-300">
-            <div class="firstDay flex flex-col justify-center items-center min-w-[95px] h-[100px] shadow-[0px_8px_24px_rgba(0,_0,_0,_0.1)] rounded-2xl">
+            <div class="firstDay flex flex-col justify-center items-center min-w-[95px] h-[100px] shadow-[0px_8px_24px_rgba(0,_0,_0,_0.1)] transition-all duration-300 rounded-2xl hover:scale-110 active:scale-125">
                 <img class="w-6 h-6 mb-2.5" src="https://via.placeholder.com/24x24" alt="firstDayWeatherIcon">
                 <span class="text-sm xs:text-base text-[#444444] tracking-tighter">Mon, 21</span>
                 <div class="flex space-x-1.5 text-[6px] xs:text-[8px] text-[#999999] tracking-widest">
@@ -98,7 +94,7 @@
                     </div>
                 </div>
             </div>
-            <div class="secondDay flex flex-col justify-center items-center min-w-[95px] h-[100px] shadow-[0px_8px_24px_rgba(0,_0,_0,_0.1)] rounded-2xl">
+            <div class="secondDay flex flex-col justify-center items-center min-w-[95px] h-[100px] shadow-[0px_8px_24px_rgba(0,_0,_0,_0.1)] transition-all duration-300 rounded-2xl hover:scale-110 active:scale-125">
                 <img class="w-6 h-6 mb-2.5" src="https://via.placeholder.com/24x24" alt="secondDayWeatherIcon">
                 <span class="text-sm xs:text-base text-[#444444] tracking-tighter">Tue, 22</span>
                 <div class="flex space-x-1.5 text-[6px] xs:text-[8px] text-[#999999] tracking-widest">
@@ -112,7 +108,7 @@
                     </div>
                 </div>
             </div>
-            <div class="thirdDay flex flex-col justify-center items-center min-w-[95px] h-[100px] shadow-[0px_8px_24px_rgba(0,_0,_0,_0.1)] rounded-2xl">
+            <div class="thirdDay flex flex-col justify-center items-center min-w-[95px] h-[100px] shadow-[0px_8px_24px_rgba(0,_0,_0,_0.1)] transition-all duration-300 rounded-2xl hover:scale-110 active:scale-125">
                 <img class="w-6 h-6 mb-2.5" src="https://via.placeholder.com/24x24" alt="thirdDayWeatherIcon">
                 <span class="text-sm xs:text-base text-[#444444] tracking-tighter">Wed, 23</span>
                 <div class="flex space-x-1.5 text-[6px] xs:text-[8px] text-[#999999] tracking-widest">
@@ -126,7 +122,7 @@
                     </div>
                 </div>
             </div>
-            <div class="fourthDay flex flex-col justify-center items-center min-w-[95px] h-[100px] shadow-[0px_8px_24px_rgba(0,_0,_0,_0.1)] rounded-2xl">
+            <div class="fourthDay flex flex-col justify-center items-center min-w-[95px] h-[100px] shadow-[0px_8px_24px_rgba(0,_0,_0,_0.1)] transition-all duration-300 rounded-2xl hover:scale-110 active:scale-125">
                 <img class="w-6 h-6 mb-2.5" src="https://via.placeholder.com/24x24" alt="fourthDayWeatherIcon">
                 <span class="text-sm xs:text-base text-[#444444] tracking-tighter">Thu, 24</span>
                 <div class="flex space-x-1.5 text-[6px] xs:text-[8px] text-[#999999] tracking-widest">

@@ -28,11 +28,11 @@ export function getNextFourDays(forecastData) {
         });
         //? Return forecast object with main data.
         return {
-            dayOfTheMonth: `${new Date(arrayOfDays[0].dt * 1000)}`.slice(0, 3),
-            dayOfTheWeek: `${new Date(arrayOfDays[0].dt * 1000)}`.slice(8, 10),
+            dayOfTheWeek: `${new Date(arrayOfDays[0].dt * 1000)}`.slice(0, 3),
+            dayOfTheMonth: `${new Date(arrayOfDays[0].dt * 1000)}`.slice(8, 10),
             mainWeather: mainWeatherDetection(forecastDataLists.weatherList),
-            tempMax: Math.round(Math.max(...forecastDataLists.tempMaxList)),
-            tempMin: Math.round(Math.min(...forecastDataLists.tempMinList))
+            tempMax: Math.ceil(Math.max(...forecastDataLists.tempMaxList)),
+            tempMin: Math.floor(Math.min(...forecastDataLists.tempMinList))
         };
     };
     //? Return object with forecast data for next four days.
